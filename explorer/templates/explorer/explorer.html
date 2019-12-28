@@ -1,0 +1,137 @@
+    {% extends 'base.html' %}
+    {% load customtags %}
+    {% load static %}
+    
+    {% block head %}
+        <!-- Plotly.js -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        <!-- Tabulator -->
+        <!-- simple theme -->
+        <link href="https://unpkg.com/tabulator-tables@4.2.7/dist/css/tabulator_simple.min.css" rel="stylesheet">
+        <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.2.7/dist/js/tabulator.min.js"></script>
+        
+        <!-- Moment.js, Tabulator requires it for converting string to datetime -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+        
+        <!-- Leaflet.js (mapping) -->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+        
+        <!-- CSS -->
+        <link href="{% static 'explorer/explorer.css' %}" rel="stylesheet">
+    {% endblock head %}
+    
+    {% block content %}
+        <div id="root">
+            <div id="root_left">
+                <div id="heatmap_container">
+                    <table id="heatmap_selects">
+    <!--
+                        <caption>Heatmap controls:</caption>
+    -->
+                        <tr>
+                            <td>
+                                <label for="heatmap_x_select">X axis:</label>
+                                <select id="heatmap_x_select" class="heatmap_axis_select">
+                                    <option value="year" class="heatmap_x_name">Year</option>
+                                    <option value="month" class="heatmap_x_name" selected>Month</option>
+                                    <option selected value="week" class="heatmap_x_name">Week</option>
+                                    <option value="day" class="heatmap_x_name">Weekday</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label for="heatmap_y_select">Y axis:</label>
+                                <select id="heatmap_y_select" class="heatmap_axis_select">
+                                    <option selected value="year">Year</option>
+                                    <option value="month">Month</option>
+                                    <option value="week">Week</option>
+                                    <option value="day">Weekday</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label for="heatmap_z_select">Z axis:</label>
+                                <select id="heatmap_z_select" class="heatmap_axis_select">
+                                    <option value="kilojoules">Kilojoules</option>
+                                    <option selected value="distance">Distance in km</option>
+                                    <option value="moving_time">Moving time</option>
+                                    <option value="elapsed_time">Elapsed time</option>
+                                    <option value="average_speed">Average speed</option>
+                                    <option value="average_cadence">Average cadence</option>
+                                    <option value="average_heartrate">Average heart rate</option>
+                                    <option value="total_elevation_gain">Total elevation gain</option>
+                                    <option value="achievement_count">Achievement count</option>
+                                    <option value="kudos_count">Kudos count</option>
+                                    <option value="comment_count">Comment count</option>
+                                    <option value="total_photo_count">Photo count</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="heatmap_color_select">Color:</label>
+                                <select id="heatmap_color_select">
+                                    <option>Blackbody</option>
+                                    <option>Bluered</option>
+                                    <option>Blues</option>
+                                    <option>Earth</option>
+                                    <option>Electric</option>
+                                    <option>Greens</option>
+                                    <option>Greys</option>
+                                    <option>Hot</option>
+                                    <option>Jet</option>
+                                    <option>Picnic</option>
+                                    <option selected>Portland</option>
+                                    <option>Rainbow</option>
+                                    <option>RdBu</option>
+                                    <option>Reds</option>
+                                    <option>Viridis</option>
+                                    <option>YlGnBu</option>
+                                    <option>YlOrRd</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button id="heatmap_reversescale_button">Reverse colors</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="heatmap"></div>
+                </div>
+                <div id="table"></div>
+            </div>
+            <div id="root_right">
+                <div id="map_container">
+                    <div id="map_selects">
+                        <label for="map_layer_select">Additional heat layer:</label>
+                        <select id="map_layer_select">
+                            <option value="kilojoules">Kilojoules</option>
+                            <option value="distance">Distance</option>
+                            <option value="moving_time">Moving time</option>
+                            <option value="elapsed_time">Elapsed time</option>
+                            <option value="average_speed">Average speed</option>
+                            <option value="average_cadence">Average cadence</option>
+                            <option value="average_heartrate">Average heart rate</option>
+                            <option value="total_elevation_gain">Total elevation gain</option>
+                            <option value="achievement_count">Achievement count</option>
+                            <option value="kudos_count">Kudos count</option>
+                            <option value="comment_count">Comment count</option>
+                            <option value="total_photo_count">Photo count</option>
+                            <option selected value="off">Off</option>
+                        </select>
+                        <label for="map_toggle">Map on</label>
+                        <input id="map_toggle" type="checkbox"></input>
+                    </div>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+        <div id="polyline_tooltip"></div>
+    {% endblock content %}
+    
+    {% block script %}
+        <script>
+            const explorer_data_absurl = "{% absurl 'explorer:explorer_data' %}"
+        </script>
+        <script src="{% static 'explorer/explorer.js' %}"></script>
+    {% endblock script %}
+      

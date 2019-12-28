@@ -1,0 +1,63 @@
+#maps {
+    display: flex;
+    height: 500px;
+    width: 100%;
+    border: 1px solid silver;
+    padding: 5px;
+}
+
+#map {
+    height: 100%;
+    width: 50%;
+/*
+    display: none;
+*/
+}
+#flex_body {
+    height: 90%;
+}
+#leaflet_map {
+    height: 100%;
+    width: 50%;
+}
+
+#wait_modal {
+    width: 100%;
+    height:100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#wait_modal_contents {
+    border-radius: 2%;
+    border: 1px solid pink;
+    width: 25%;
+    height: 25%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#spinner {
+    margin: 1%;
+    width: 10px;
+    height: 10px;
+    border: 5px solid;
+    border-color: rgba(0, 0, 255, 0.3);
+    border-top: 5px solid black;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}   
+
+@keyframes spin {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+

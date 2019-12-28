@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load customtags %}
+{% load static %}
+
+        {% block head %}
+            <link href="{% static 'explorer/leaderboards.css' %}" rel="stylesheet">
+        
+            <!-- Tabulator -->
+            <link href="https://unpkg.com/tabulator-tables@4.2.7/dist/css/tabulator.min.css" rel="stylesheet">
+            <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.2.7/dist/js/tabulator.min.js"></script>
+    
+            <!-- Moment.js, Tabulator requires it for converting string to datetime -->
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+            
+            <!-- Leaflet.js (mapping) -->
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+            <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+        {% endblock head %}
+        
+        {% block content %}
+            <table> 
+                <tr>
+                    <td>Select date range:</td>
+                    <td>
+                        <div id="date_inputs">                         
+                            <input type="checkbox" value="today" id="today_checkbox" checked>
+                            <label for="today_checkbox">Today</label>
+                            <input type="checkbox" value="this_week" id="this_week_checkbox">
+                            <label for="this_week_checkbox">This week</label>
+                            <input type="checkbox" value="this_month" id="this_month_checkbox">
+                            <label for="this_month_checkbox">This month</label>
+                            <input type="checkbox" value="this_year" id="this_year_checkbox">
+                            <label for="this_year_checkbox">This year</label>
+                            <input type="checkbox" value="" id="all_time_checkbox">
+                            <label for="all_time_checkbox">All time</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select activity:</td>
+                    <td>
+                        <select id="activity_select">
+                            {% for option in options %}
+                                <option value="{{ option.value }}">{{ option.text }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <button id="get_leaderboards_button">Get leaderboards</button>
+                    </td>
+                </tr>
+            </table>    
+            
+            <div id="msg" class="hidden">Downloading data, please wait...</div>
+            <div id="segment_rows"></div>
+        {% endblock content %}
+        
+        {% block script %}
+            <script>
+                const leaderboards_data_absurl = "{% absurl 'explorer:leaderboards_data' %}"
+            </script>
+            <script src="{% static 'explorer/leaderboards.js' %}"></script>
+        {% endblock script %}

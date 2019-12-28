@@ -1,0 +1,42 @@
+#content {
+   height: 100%;
+}
+#flex_body {
+    height: 90%;
+}
+#footer {
+    height: 10%;
+}
+.segment_table_container {
+    margin: 5px;
+}
+.segment_row_header {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    border-bottom: 1px solid black;
+    }
+.header_hyperlink {
+    text-decoration: none;
+    color: black;
+}
+.header_hyperlink:hover {
+    color: blue;
+}
+.segment_map {
+    width: 500px;
+    height: 200px;
+}
+.segment_row_tables {
+    display: flex;
+    align-items: flex-start;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+    color: red;
+}

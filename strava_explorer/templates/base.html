@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+{% load static %}
+{% load customtags %}
+
+    <html>
+        <head>
+<!--
+            <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+-->
+            <link href="https://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
+            <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebas" type="text/css"/> 
+            <link href="{% static 'strava_explorer/base.css' %}" rel="stylesheet">
+            {% block head %}
+            {% endblock head %}
+        </head>
+        <body>
+            <div id="nav_container">
+                <div id="user_or_demo">{% user_or_demo %}</div>
+                <nav>
+                    <ul>
+                        <li><a class="logo" href="{% url 'explorer:index' %}">STRAVA EXPLORER</a></li>
+                        <span class="nav_delimiter">|</span>
+                        <li><a href="{% url 'explorer:explorer' %}">Explorer</a></li>
+                        <span class="nav_delimiter">/</span>
+                        <li><a href="{% url 'explorer:leaderboards' %}">Leaderboards</a></li>
+                        <span class="nav_delimiter">/</span>
+                        <li><a href="{% url 'explorer:have_I_been_there' %}">Have I been there?</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="flex_body">
+                <div id="content">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+                <div id="footer">
+                    <a href='https://www.strava.com'>
+                        <img id="powered_icon" src="{% static 'strava_explorer/powered.png' %}"></img>
+                    </a>
+                </div>    
+            </div>
+        </body>
+        {% block script %}
+        {% endblock script%}
+    </html>

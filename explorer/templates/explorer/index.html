@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'explorer/index.css' %}">
+{% endblock head %}
+
+{% block content %}
+    <div id="connect_btn_container">
+        <a href="{% url 'explorer:authorize' %}">
+            <img id="connect_btn" src="{% static 'explorer/connect.png' %}"></img>
+        </a>
+        <div id="demo_router">Or try the <a href="{% url 'explorer:toggle_demo_mode' %}">demo</a></div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}

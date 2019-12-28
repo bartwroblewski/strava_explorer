@@ -1,0 +1,31 @@
+#flex_body {
+    height: 100%;
+   // background: orange;
+}
+
+#content {
+    display: flex;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+/*
+    background: pink;
+*/
+}
+#footer {
+    height: 40%;
+/*
+    background: rgb(252, 76, 3);
+*/
+}
+#demo_router {
+    text-align: center;
+}
+#connect_btn_container img {
+    transition: box-shadow .5s;
+}
+
+#connect_btn_container img:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px black;
+}

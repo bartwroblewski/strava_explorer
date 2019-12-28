@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+    <html>
+        <body>
+            Downloading your data from Strava, please wait...
+        </body>
+        <script>
+            let url = "{% url 'explorer:cache_athlete_activities' %}"
+            fetch(url)
+                .then(response => {
+                    window.location.href = response.url
+                })
+        </script>
+    </html>
