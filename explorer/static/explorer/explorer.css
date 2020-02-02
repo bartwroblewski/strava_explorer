@@ -20,6 +20,10 @@
     width: 49%;
 }
 
+#wait_message {
+    color: red;
+}
+
 #heatmap_container {
     height: 50%;//45%;
 }

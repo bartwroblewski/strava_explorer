@@ -17,4 +17,7 @@ urlpatterns = [
     path('leaderboards_data', views.leaderboards_data, name='leaderboards_data'),
     path('have_I_been_there', views.have_I_been_there, name='have_I_been_there'),
     path('flush_session', views.flush_session, name='flush_session'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG = True:
+	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

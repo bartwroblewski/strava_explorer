@@ -18,7 +18,8 @@ class Model {
 
 class View {
     constructor() {
-                                
+        this.wait_message                = this.getElement('#wait_message')
+        
         // heatmap
         this.heatmap_container           = this.getElement('#heatmap_container')
         this.heatmap                     = this.getElement('#heatmap')
@@ -362,6 +363,7 @@ class Controller {
     async initialize() {
         console.log('initialize')
         this.model.data = await this.model.getData(this.view.inputs) 
+        this.view.wait_message.style.display = 'none'
     }
     
     onDataChanged = data => {
