@@ -19,5 +19,5 @@ urlpatterns = [
     path('flush_session', views.flush_session, name='flush_session'),
 ]
 
-if settings.DEBUG = True:
+if settings.DEBUG == True:
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
