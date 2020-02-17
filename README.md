@@ -2,6 +2,8 @@
 
 An app to analyze/visualize Strava (a social network for athletes) data.
 
+Users are authorized via OAuth. Data is pulled from Strava API.
+
 Live version [here](http://139.59.157.188) (you can try the demo mode if you do not have a Strava account).
 
 Here's a quick breakdown of the features:
