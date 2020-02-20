@@ -12,3 +12,7 @@ Here's a quick breakdown of the features:
 - Have I been there?: upload any GPX file and visualize the frequency of your visits to specific places. All of your acitivities are taken into account during the analysis. A kdtree structure is used for fast spatial indexing (as opposed to comparing each of the analyzed GPX coordinates against each other). 
 
 ## Screenshots:
+![Alt text](/screenshots/explorer1.png?raw=true)
+![Alt text](/screenshots/explorer1.png?raw=true)
+![Alt text](/screenshots/leaderboards.png?raw=true)
+![Alt text](/screenshots/have_I_been_there.png?raw=true)
