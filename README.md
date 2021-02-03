@@ -6,14 +6,14 @@ An app to analyze/visualize Strava (a social network for athletes) data.
 
 Quick breakdown of the features:
 - Explorer: creates a heatmap of your activities in various time range/heat criteria combinations;
-- Leaderboards: shows all of your segment efforts for particular activity split by time ranges;
+- Leaderboards: shows all of your segment efforts for particular activity split by time ranges. Currently not functional due to Strava API policy changes;
 - Have I been there?: visualizes the frequency of your visits to specific locations based on uploaded GPX file. All of your acitivities are taken into account during the analysis. 
 
 ## Usage
 
 Live version [here](http://139.59.157.188).
 
-You have a choice to try the demo mode with some data prepopulated if you do not have a Strava account.
+You have a choice to try the demo mode with some prepopulated data if you do not have a Strava account.
 
 ## How does it work?
 
