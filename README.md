@@ -1,15 +1,32 @@
 # Strava Explorer
 
+## About
+
 An app to analyze/visualize Strava (a social network for athletes) data.
 
-Users are authorized via OAuth. Data is pulled from Strava API.
-
-Live version [here](http://139.59.157.188) (you can try the demo mode if you do not have a Strava account).
-
-Here's a quick breakdown of the features:
+Quick breakdown of the features:
 - Explorer: creates a heatmap of your activities in various time range/heat criteria combinations;
-- Leaderboards: Strava does not natively offer a quick way of seeing all of your segment efforts for particular activity split by time ranges, so here it is!;
-- Have I been there?: upload any GPX file and visualize the frequency of your visits to specific places. All of your acitivities are taken into account during the analysis. A kdtree structure is used for fast spatial indexing (as opposed to comparing each of the analyzed GPX coordinates against each other). 
+- Leaderboards: shows all of your segment efforts for particular activity split by time ranges;
+- Have I been there?: visualizes the frequency of your visits to specific locations based on uploaded GPX file. All of your acitivities are taken into account during the analysis. 
+
+## Usage
+
+Live version [here](http://139.59.157.188).
+
+You have a choice to try the demo mode with some data prepopulated if you do not have a Strava account.
+
+## How does it work?
+
+Users are authenticated to Strava via OAuth. 
+
+Bike data is pulled from Strava API.
+
+"Have I been there?" feature utilizes a kdtree data structure for fast spatial indexing (as opposed to comparing each of the analyzed GPX coordinates against each other). 
+
+## Technology stack
+
+Backend: Python & Django
+Frontend: vanilla JS
 
 ## Screenshots:
 ![Alt text](/screenshots/explorer2.png?raw=true)
