@@ -11,7 +11,7 @@ Quick breakdown of the features:
 
 ## Usage
 
-Live version [here](http://139.59.157.188).
+~~Live version [here](http://139.59.157.188).~~
 
 You have a choice to try the demo mode with some prepopulated data if you do not have a Strava account.
 
