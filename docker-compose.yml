@@ -1,6 +1,5 @@
 services:
   strava_explorer:
-    # image: barciewicz/strava_explorer:latest
     build:
       context: .
       dockerfile: Dockerfile.dev
