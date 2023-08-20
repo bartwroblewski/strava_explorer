@@ -1,4 +1,12 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SECRET_KEY = os.environ['SECRET_KEY']
+
+STRAVA_CLIENT_ID = os.environ['STRAVA_CLIENT_ID']
+STRAVA_CLIENT_SECRET = os.environ['STRAVA_CLIENT_SECRET']
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

@@ -86,7 +86,7 @@ def get_data(data):
     df['year']          = df['start_date'].dt.year
     df['month']         = df['start_date'].dt.month
     df['month_name']    = df['month'].map(lambda month_number: month_name(month_number))
-    df['week']          = df['start_date'].dt.week
+    df['week']          = df['start_date'].dt.isocalendar().week
     df['day']           = df['start_date'].dt.dayofweek
     df['moving_time']   = df['moving_time'].apply(lambda seconds : round(seconds / 3600, 1)) # seconds to hours
     df['elapsed_time']  = df['elapsed_time'].apply(lambda seconds : round(seconds / 3600, 1)) # seconds to hours

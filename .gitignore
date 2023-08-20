@@ -14,3 +14,6 @@ db.sqlite3
 
 # Other #
 todo.txt
+
+.env
+env

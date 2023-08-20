@@ -1,0 +1,9 @@
+services:
+  strava_explorer:
+    # image: barciewicz/strava_explorer:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 8003:8000
+    tty: true
