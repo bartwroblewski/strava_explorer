@@ -1,5 +1,12 @@
 # Strava Explorer
 
+Live version [here](http://46.101.156.79:8003/).
+
+![Alt text](/screenshots/explorer2.png?raw=true)
+![Alt text](/screenshots/explorer1.png?raw=true)
+![Alt text](/screenshots/leaderboards.png?raw=true)
+![Alt text](/screenshots/have_I_been_there.png?raw=true)
+
 ## About
 
 An app to analyze/visualize Strava (a social network for athletes) data.
@@ -10,8 +17,6 @@ Quick breakdown of the features:
 - Have I been there?: visualizes the frequency of your visits to specific locations based on uploaded GPX file. All of your acitivities are taken into account during the analysis. 
 
 ## Usage
-
-~~Live version [here](http://139.59.157.188).~~
 
 You have a choice to try the demo mode with some prepopulated data if you do not have a Strava account.
 
@@ -26,10 +31,5 @@ Bike data is pulled from Strava API.
 ## Technology stack
 
 Backend: Python & Django
-Frontend: vanilla JS
 
-## Screenshots:
-![Alt text](/screenshots/explorer2.png?raw=true)
-![Alt text](/screenshots/explorer1.png?raw=true)
-![Alt text](/screenshots/leaderboards.png?raw=true)
-![Alt text](/screenshots/have_I_been_there.png?raw=true)
+Frontend: vanilla JS
